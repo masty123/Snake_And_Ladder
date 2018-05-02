@@ -117,10 +117,7 @@ public class DiceRoll extends Application {
 						player2Turn = false;
 						player2Position += rand;
 						
-						if(player2XPos == 40 &&  player2YPos == 760) translatePlayer(player2XPos = 200, player2YPos = 520, player1);
-//						if(player2XPos == 240 &&  player2YPos == 760) translatePlayer(player2XPos = 80, player2YPos = 680, player1);	
-//						if(player2XPos == 280 &&  player2YPos == 760) translatePlayer(player2XPos = 280, player2YPos = 520, player1);
-//						if(player2XPos == 200 &&  player2YPos == 680) translatePlayer(player2XPos = 200, player2YPos = 600, player1);
+						landOn(player2XPos, player2YPos);
 
 					}
 				}
@@ -144,23 +141,8 @@ public class DiceRoll extends Application {
 						player2Turn = true;
 						player1Position += rand;
 						
-						if(player1XPos == 120 && player1YPos == 760) translatePlayer(player1XPos = 200, player1YPos = 520, player1); // ladder 1
-						if(player1XPos == 520 && player1YPos == 760) translatePlayer(player1XPos = 520, player1YPos = 680, player1); // ladder 2	
-						if(player1XPos == 600 && player1YPos == 760) translatePlayer(player1XPos = 760, player1YPos = 520, player1); // ladder 3
-						if(player1XPos == 440 && player1YPos == 680) translatePlayer(player1XPos = 440, player1YPos = 600, player1); // ladder 4
-						if(player1XPos == 600 && player1YPos == 600) translatePlayer(player1XPos = 280, player1YPos = 120, player1); // snake 1	
-						if(player1XPos == 360 && player1YPos == 680) translatePlayer(player1XPos = 440, player1YPos = 760, player1);
-						if(player1XPos == 360 && player1YPos == 360) translatePlayer(player1XPos = 280, player1YPos = 440, player1);
-						if(player1XPos == 760 && player1YPos == 360) translatePlayer(player1XPos = 520, player1YPos = 280, player1);
-						if(player1XPos == 680 && player1YPos == 440) translatePlayer(player1XPos = 760, player1YPos = 680, player1);
-						if(player1XPos == 440 && player1YPos == 440) translatePlayer(player1XPos = 360, player1YPos = 600, player1);
-						if(player1XPos == 120 && player1YPos == 280) translatePlayer(player1XPos = 120, player1YPos = 680, player1);
-						if(player1XPos == 280 && player1YPos == 280) translatePlayer(player1XPos = 40, player1YPos = 360, player1);
-						if(player1XPos == 760 && player1YPos == 200) translatePlayer(player1XPos = 760, player1YPos = 40, player1);
-						if(player1XPos == 520 && player1YPos == 200) translatePlayer(player1XPos = 600, player1YPos = 360, player1);
-						if(player1XPos == 680 && player1YPos == 120) translatePlayer(player1XPos = 600, player1YPos = 280, player1);
-						if(player1XPos == 520 && player1YPos == 120) translatePlayer(player1XPos = 520, player1YPos = 40, player1);
-
+						
+						landOn(player1XPos, player1YPos);
 
 
 					}
@@ -191,7 +173,7 @@ public class DiceRoll extends Application {
 				player1Turn = true;
 				player2Turn = false;
 				
-				translatePlayer(player1XPos = 440, player1YPos = 680, player1);
+				//translatePlayer(player1XPos = 200, player1YPos = 40, player1);
 				
 			}
 		});
@@ -260,6 +242,29 @@ public class DiceRoll extends Application {
 				gameButton.setText("start");
 			}
 		}
+	}
+	
+	private void landOn(int xPos, int yPos) {
+		if(xPos == 120 && yPos == 760) translatePlayer(xPos = 200, yPos = 520, player1); // ladder 1  
+		if(xPos == 520 && yPos == 760) translatePlayer(xPos = 520, yPos = 680, player1); // ladder 2	
+		if(xPos == 600 && yPos == 760) translatePlayer(xPos = 760, yPos = 520, player1); // ladder 3
+		if(xPos == 440 && yPos == 680) translatePlayer(xPos = 440, yPos = 600, player1); // ladder 4
+		if(xPos == 360 && yPos == 680) translatePlayer(xPos = 440, yPos = 760, player1); // snake 1
+		if(xPos == 600 && yPos == 600) translatePlayer(xPos = 280, yPos = 120, player1); // ladder 5
+		if(xPos == 40 && yPos == 600) translatePlayer(xPos = 120, yPos = 440, player1); // ladder 6
+		if(xPos == 360 && yPos == 520) translatePlayer(xPos = 280, yPos = 460, player1); // ladder 7
+		if(xPos == 680 && yPos == 440) translatePlayer(xPos = 760, yPos = 680, player1); // snake 2
+		if(xPos == 440 && yPos == 440) translatePlayer(xPos = 360, yPos = 600, player1); // snake 3
+		if(xPos == 760 && yPos == 360) translatePlayer(xPos = 520, yPos = 280, player1); // ladder 8
+		if(xPos == 120 && yPos == 280) translatePlayer(xPos = 120, yPos = 680, player1); // snake 4
+		if(xPos == 280 && yPos == 280) translatePlayer(xPos = 40, yPos = 360, player1); // snake 5
+		if(xPos == 760 && yPos == 200) translatePlayer(xPos = 760, yPos = 40, player1); // ladder 9
+		if(xPos == 520 && yPos == 200) translatePlayer(xPos = 600, yPos = 360, player1); // snake 6	
+		if(xPos == 200 && yPos == 200) translatePlayer(xPos = 200, yPos = 40, player1); // ladder 8
+		if(xPos == 680 && yPos == 120) translatePlayer(xPos = 600, yPos = 280, player1); // snake 7
+		if(xPos == 520 && yPos == 120) translatePlayer(xPos = 520, yPos = 40, player1);  // ladder 11
+		if(xPos == 440 && yPos == 40) translatePlayer(xPos = 520, yPos = 200, player1); // snake 8
+		if(xPos == 120 && yPos == 40) translatePlayer(xPos = 40, yPos = 200, player1); // snake 9
 	}
 	
 	
