@@ -144,17 +144,22 @@ public class DiceRoll extends Application {
 						player2Turn = true;
 						player1Position += rand;
 						
-						if(player1XPos == 120 && player1YPos == 760) translatePlayer(player1XPos = 200, player1YPos = 520, player1);
-						if(player1XPos == 520 && player1YPos == 760) translatePlayer(player1XPos = 520, player1YPos = 680, player1);	
-						if(player1XPos == 600 && player1YPos == 760) translatePlayer(player1XPos = 760, player1YPos = 520, player1);
-						if(player1XPos == 440 && player1YPos == 680) translatePlayer(player1XPos = 440, player1YPos = 600, player1);
+						if(player1XPos == 120 && player1YPos == 760) translatePlayer(player1XPos = 200, player1YPos = 520, player1); // ladder 1
+						if(player1XPos == 520 && player1YPos == 760) translatePlayer(player1XPos = 520, player1YPos = 680, player1); // ladder 2	
+						if(player1XPos == 600 && player1YPos == 760) translatePlayer(player1XPos = 760, player1YPos = 520, player1); // ladder 3
+						if(player1XPos == 440 && player1YPos == 680) translatePlayer(player1XPos = 440, player1YPos = 600, player1); // ladder 4
+						if(player1XPos == 600 && player1YPos == 600) translatePlayer(player1XPos = 280, player1YPos = 120, player1); // snake 1	
 						if(player1XPos == 360 && player1YPos == 680) translatePlayer(player1XPos = 440, player1YPos = 760, player1);
-						if(player1XPos == 360 && player1YPos == 520) translatePlayer(player1XPos = 280, player1YPos = 440, player1);
+						if(player1XPos == 360 && player1YPos == 360) translatePlayer(player1XPos = 280, player1YPos = 440, player1);
 						if(player1XPos == 760 && player1YPos == 360) translatePlayer(player1XPos = 520, player1YPos = 280, player1);
 						if(player1XPos == 680 && player1YPos == 440) translatePlayer(player1XPos = 760, player1YPos = 680, player1);
 						if(player1XPos == 440 && player1YPos == 440) translatePlayer(player1XPos = 360, player1YPos = 600, player1);
 						if(player1XPos == 120 && player1YPos == 280) translatePlayer(player1XPos = 120, player1YPos = 680, player1);
 						if(player1XPos == 280 && player1YPos == 280) translatePlayer(player1XPos = 40, player1YPos = 360, player1);
+						if(player1XPos == 760 && player1YPos == 200) translatePlayer(player1XPos = 760, player1YPos = 40, player1);
+						if(player1XPos == 520 && player1YPos == 200) translatePlayer(player1XPos = 600, player1YPos = 360, player1);
+						if(player1XPos == 680 && player1YPos == 120) translatePlayer(player1XPos = 600, player1YPos = 280, player1);
+						if(player1XPos == 520 && player1YPos == 120) translatePlayer(player1XPos = 520, player1YPos = 40, player1);
 
 
 
@@ -186,7 +191,7 @@ public class DiceRoll extends Application {
 				player1Turn = true;
 				player2Turn = false;
 				
-				translatePlayer(player1XPos = 40, player1YPos = 360, player1);
+				translatePlayer(player1XPos = 440, player1YPos = 680, player1);
 				
 			}
 		});
