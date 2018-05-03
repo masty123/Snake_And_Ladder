@@ -60,7 +60,7 @@ public class DiceRoll extends Application {
 	public static final int width = 10;
 	public static final int height = 10;
 	
-	private int max = 10;
+	private int max = 6;
 	private int min = 1;
 	
 	private Group tileGroup = new Group();
@@ -81,12 +81,12 @@ public class DiceRoll extends Application {
 			}
 		}
 		
-		for (int i = 0 ; i< height; i++) {
-			for (int j = 0; j < width; j++) {
-				System.out.print(cirPos[i][j]+ " ");
-			}
-			System.out.println();
-		}
+//		for (int i = 0 ; i< height; i++) {
+//			for (int j = 0; j < width; j++) {
+//				System.out.print(cirPos[i][j]+ " ");
+//			}
+//			System.out.println();
+//		}
 		
 		player1 = new Circle(40);
 		player1.setId("player1");
@@ -264,13 +264,17 @@ public class DiceRoll extends Application {
 	}
 	
 	private void landOn(int xPos, int yPos, Circle player ) {
-		if(xPos == 120 && yPos == 760) translatePlayer(xPos = 200, yPos = 520, player); // ladder 1  
-		if(xPos == 520 && yPos == 760) translatePlayer(xPos = 520, yPos = 680, player); // ladder 2	
+		if(xPos == 120 && yPos == 760) {
+			translatePlayer(xPos = 200, yPos = 520, player); // ladder 1  
+			xPos = 200;
+			yPos = 520;		
+		}
+		if(xPos == 520 && yPos == 760) translatePlayer(xPos = 520, yPos = 680, player); // ladder 2
 		if(xPos == 600 && yPos == 760) translatePlayer(xPos = 760, yPos = 520, player); // ladder 3
 		if(xPos == 440 && yPos == 680) translatePlayer(xPos = 440, yPos = 600, player); // ladder 4
 		if(xPos == 360 && yPos == 680) translatePlayer(xPos = 440, yPos = 760, player); // snake 1
 		if(xPos == 600 && yPos == 600) translatePlayer(xPos = 280, yPos = 120, player); // ladder 5
-		if(xPos == 40 && yPos == 600) translatePlayer(xPos = 120, yPos = 440, player); // ladder 6
+		if(xPos == 40 && yPos == 600)  translatePlayer(xPos = 120, yPos = 440, player); // ladder 6
 		if(xPos == 360 && yPos == 520) translatePlayer(xPos = 280, yPos = 460, player); // ladder 7
 		if(xPos == 680 && yPos == 440) translatePlayer(xPos = 760, yPos = 680, player); // snake 2
 		if(xPos == 440 && yPos == 440) translatePlayer(xPos = 360, yPos = 600, player); // snake 3
@@ -285,14 +289,14 @@ public class DiceRoll extends Application {
 		if(xPos == 440 && yPos == 40) translatePlayer(xPos = 520, yPos = 200, player); // snake 8
 		if(xPos == 120 && yPos == 40) translatePlayer(xPos = 40, yPos = 200, player); // snake 9
 		
-		if (xPos == 760) {
-			if (player.getId().equals("player1")) {
-				p1Freeze = true;
-			}
-			if (player.getId().equals("player2")) {
-				p2Freeze = true;
-			}
-		}
+//		if (xPos == 760) {
+//			if (player.getId().equals("player1")) {
+//				p1Freeze = true;
+//			}
+//			if (player.getId().equals("player2")) {
+//				p2Freeze = true;
+//			}
+//		}
 	}
 	
 	
